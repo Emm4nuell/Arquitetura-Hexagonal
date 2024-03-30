@@ -32,6 +32,6 @@ public class UsuarioEntity {
     private String senha;
     private String foto;
     private boolean status;
-    
+
 }
 
