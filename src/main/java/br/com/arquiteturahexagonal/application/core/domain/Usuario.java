@@ -1,7 +1,10 @@
 package br.com.arquiteturahexagonal.application.core.domain;
 
+import br.com.arquiteturahexagonal.application.core.enums.PerfilEnums;
+
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Set;
 
 public class Usuario {
     private Long id;
@@ -16,6 +19,8 @@ public class Usuario {
     private String senha;
     private String foto;
     private boolean status;
+
+    private Set<PerfilEnums> perfilEnums;
 
     public Usuario() {
     }
@@ -129,6 +134,14 @@ public class Usuario {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Set<PerfilEnums> getPerfilEnums() {
+        return perfilEnums;
+    }
+
+    public void setPerfilEnums(Set<PerfilEnums> perfilEnums) {
+        this.perfilEnums = perfilEnums;
     }
 }
 

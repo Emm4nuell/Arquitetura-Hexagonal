@@ -25,9 +25,9 @@ public class UsuarioController {
 
 
     @PostMapping
-    public ResponseEntity<UsuarioDto> retorno(@RequestBody @Valid UsuarioDto dto){
+    public ResponseEntity<UsuarioDto> save(@RequestBody @Valid UsuarioDto dto){
         Usuario usuario = usuarioServicePort.saveService(mapper.map(dto, Usuario.class));
-        return ResponseEntity.status(HttpStatus.OK).body(mapper.map(usuario, UsuarioDto.class));
+        return ResponseEntity.status(HttpStatus.CREATED).body(mapper.map(usuario, UsuarioDto.class));
 
     }
 
@@ -41,4 +41,17 @@ public class UsuarioController {
     public ResponseEntity<UsuarioDto> findById(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(mapper.map(usuarioServicePort.findByIdService(id), UsuarioDto.class));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDto> update(@RequestBody UsuarioDto dto, @PathVariable Long id){
+        Usuario usuario = usuarioServicePort.updateService(mapper.map(dto, Usuario.class), id);
+        return ResponseEntity.status(HttpStatus.OK).body(mapper.map(usuario, UsuarioDto.class));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        usuarioServicePort.deleteService(id);
+        return ResponseEntity.ok().build();
+    }
+
 }

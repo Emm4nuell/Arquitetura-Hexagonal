@@ -31,8 +31,10 @@ public class UsuarioRepositoryAdapter implements UsuarioRepositoryPort {
     }
 
     @Override
+    @Transactional
     public Usuario updateRepository(Usuario usuario, Long id) {
-        return null;
+        UsuarioEntity entity = usuarioRepository.findById(id).orElseThrow(() -> new NullPointerException("Usuário não localizado na base de dados!"));
+        return mapper.map(entity, Usuario.class);
     }
 
     @Override
@@ -43,14 +45,14 @@ public class UsuarioRepositoryAdapter implements UsuarioRepositoryPort {
 
     @Override
     public Usuario findByIdRepository(Long id) {
-        UsuarioEntity entity = usuarioRepository.findById(id)
-                .orElseThrow(() -> new  NullPointerException("Usuário não localizado na base de dados!"));
-
+        UsuarioEntity entity = usuarioRepository.findById(id).orElseThrow(() -> new NullPointerException("Usuário não localizado na base de dados!"));
         return mapper.map(entity, Usuario.class);
     }
 
     @Override
+    @Transactional
     public void deleteRepository(Long id) {
-
+        UsuarioEntity entity = usuarioRepository.findById(id).orElseThrow(() -> new NullPointerException("Usuário não localizado na base de dados!"));
+        usuarioRepository.deleteById(id);
     }
 }

@@ -24,7 +24,10 @@ public class UsuarioService implements UsuarioServicePort {
 
     @Override
     public Usuario updateService(Usuario usuario, Long id) {
-        return null;
+        Usuario user = usuarioRepositoryPort.updateRepository(usuario, id);
+        usuario.setId(user.getId());
+        saveService(usuario);
+        return usuario;
     }
 
     @Override
@@ -43,6 +46,6 @@ public class UsuarioService implements UsuarioServicePort {
 
     @Override
     public void deleteService(Long id) {
-
+        usuarioRepositoryPort.deleteRepository(id);
     }
 }

@@ -1,5 +1,6 @@
 package br.com.arquiteturahexagonal.adapters.mapper.usuario;
 
+import br.com.arquiteturahexagonal.application.core.enums.PerfilEnums;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -30,5 +32,6 @@ public class UsuarioDto {
     private String senha;
     private String foto;
     private boolean status;
+    private Set<PerfilEnums> perfilEnums;
     
 }
