@@ -42,12 +42,11 @@ public class UsuarioRepositoryAdapter implements UsuarioRepositoryPort {
     }
 
     @Override
-    public Usuario findByIdService(Long id) {
-        Optional<UsuarioEntity> entity = usuarioRepository.findById(id);
-        if (entity.isPresent()){
-            return mapper.map(entity.get(), Usuario.class);
-        }
-        return new Usuario();
+    public Usuario findByIdRepository(Long id) {
+        UsuarioEntity entity = usuarioRepository.findById(id)
+                .orElseThrow(() -> new  NullPointerException("Usuário não localizado na base de dados!"));
+
+        return mapper.map(entity, Usuario.class);
     }
 
     @Override

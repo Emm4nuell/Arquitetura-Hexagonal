@@ -6,6 +6,7 @@ import br.com.arquiteturahexagonal.application.port.out.UsuarioRepositoryPort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UsuarioService implements UsuarioServicePort {
 
@@ -37,7 +38,7 @@ public class UsuarioService implements UsuarioServicePort {
 
     @Override
     public Usuario findByIdService(Long id) {
-        return usuarioRepositoryPort.findByIdService(id);
+        return usuarioRepositoryPort.findByIdRepository(id);
     }
 
     @Override

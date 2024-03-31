@@ -8,7 +8,7 @@ public interface UsuarioRepositoryPort {
     Usuario saveRepository(Usuario usuario);
     Usuario updateRepository(Usuario usuario, Long id);
     List<Usuario> findAllRepository();
-    Usuario findByIdService(Long id);
+    Usuario findByIdRepository(Long id);
 
     void deleteRepository(Long id);
 }
