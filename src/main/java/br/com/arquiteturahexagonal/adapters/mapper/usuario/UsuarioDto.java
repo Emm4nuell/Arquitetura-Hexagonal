@@ -1,6 +1,6 @@
-package br.com.arquiteturahexagonal.adapters.inbound.entity;
+package br.com.arquiteturahexagonal.adapters.mapper.usuario;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,31 +8,27 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@Entity
-@Table(name = "usuario")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioEntity {
+public class UsuarioDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
 
-    @Column(unique = true)
+    @NotBlank(message = "Campo nome é obrigatório!")
+    private String nome;
+    @NotBlank(message = "Campo cpf é obrigatório!")
     private String cpf;
     private String rg;
     private String sexo;
-
-    @Column(unique = true)
+    @NotBlank(message = "Campo email é obrigatório!")
     private String email;
     private String contato;
     private Date datanascimento;
     private LocalDateTime datacadastro;
+    @NotBlank(message = "Campo senha é obrigatório!")
     private String senha;
     private String foto;
     private boolean status;
-
+    
 }
-
