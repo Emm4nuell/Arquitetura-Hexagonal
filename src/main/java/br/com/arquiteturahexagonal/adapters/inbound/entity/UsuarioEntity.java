@@ -1,6 +1,7 @@
 package br.com.arquiteturahexagonal.adapters.inbound.entity;
 
 import br.com.arquiteturahexagonal.application.core.enums.PerfilEnums;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -40,6 +42,10 @@ public class UsuarioEntity {
     @CollectionTable(name = "PERFIL")
     @Enumerated(EnumType.ORDINAL)
     private Set<PerfilEnums> perfilEnums = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
+    private List<MaterialEntity> materiais;
 
 }
 

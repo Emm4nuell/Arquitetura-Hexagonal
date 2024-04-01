@@ -4,6 +4,7 @@ import br.com.arquiteturahexagonal.application.core.enums.PerfilEnums;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 public class Usuario {
@@ -22,10 +23,12 @@ public class Usuario {
 
     private Set<PerfilEnums> perfilEnums;
 
+    private List<Material> materiais;
+
     public Usuario() {
     }
 
-    public Usuario(Long id, String nome, String cpf, String rg, String sexo, String email, String contato, Date datanascimento, LocalDateTime datacadastro, String senha, String foto, boolean status) {
+    public Usuario(Long id, String nome, String cpf, String rg, String sexo, String email, String contato, Date datanascimento, LocalDateTime datacadastro, String senha, String foto, boolean status, Set<PerfilEnums> perfilEnums, List<Material> materiais) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -38,6 +41,8 @@ public class Usuario {
         this.senha = senha;
         this.foto = foto;
         this.status = status;
+        this.perfilEnums = perfilEnums;
+        this.materiais = materiais;
     }
 
     public Long getId() {
@@ -142,6 +147,14 @@ public class Usuario {
 
     public void setPerfilEnums(Set<PerfilEnums> perfilEnums) {
         this.perfilEnums = perfilEnums;
+    }
+
+    public List<Material> getMateriais() {
+        return materiais;
+    }
+
+    public void setMateriais(List<Material> materiais) {
+        this.materiais = materiais;
     }
 }
 

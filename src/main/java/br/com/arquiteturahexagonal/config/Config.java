@@ -1,6 +1,8 @@
 package br.com.arquiteturahexagonal.config;
 
+import br.com.arquiteturahexagonal.application.core.service.MaterialService;
 import br.com.arquiteturahexagonal.application.core.service.UsuarioService;
+import br.com.arquiteturahexagonal.application.port.out.MaterialRepositoryPort;
 import br.com.arquiteturahexagonal.application.port.out.UsuarioRepositoryPort;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.modelmapper.ModelMapper;
@@ -14,6 +16,11 @@ public class Config {
     @Bean
     public UsuarioService service(UsuarioRepositoryPort usuarioRepositoryPort) {
         return new UsuarioService(usuarioRepositoryPort);
+    }
+
+    @Bean
+    public MaterialService materialService(MaterialRepositoryPort materialRepositoryPort){
+        return new MaterialService(materialRepositoryPort);
     }
 
     @Bean
