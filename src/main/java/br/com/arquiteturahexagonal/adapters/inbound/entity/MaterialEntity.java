@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -38,5 +39,8 @@ public class MaterialEntity {
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private UsuarioEntity usuario;
+
+    @OneToMany(mappedBy = "material", fetch = FetchType.LAZY)
+    private List<CotacaoEntity> cotacoes;
 
 }
