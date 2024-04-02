@@ -1,4 +1,4 @@
-package br.com.arquiteturahexagonal.adapters.mapper.usuario;
+package br.com.arquiteturahexagonal.adapters.mapper.dto;
 
 import br.com.arquiteturahexagonal.application.core.domain.Empresa;
 import br.com.arquiteturahexagonal.application.core.domain.Material;

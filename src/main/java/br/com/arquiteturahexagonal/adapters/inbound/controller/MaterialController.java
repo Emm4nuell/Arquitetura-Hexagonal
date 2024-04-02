@@ -1,6 +1,6 @@
 package br.com.arquiteturahexagonal.adapters.inbound.controller;
 
-import br.com.arquiteturahexagonal.adapters.mapper.usuario.MaterialDto;
+import br.com.arquiteturahexagonal.adapters.mapper.dto.MaterialDto;
 import br.com.arquiteturahexagonal.application.core.domain.Material;
 import br.com.arquiteturahexagonal.application.port.in.MaterialServicePort;
 import org.modelmapper.ModelMapper;

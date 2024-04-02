@@ -1,6 +1,6 @@
 package br.com.arquiteturahexagonal.adapters.inbound.controller;
 
-import br.com.arquiteturahexagonal.adapters.mapper.usuario.UsuarioDto;
+import br.com.arquiteturahexagonal.adapters.mapper.dto.UsuarioDto;
 import br.com.arquiteturahexagonal.application.core.domain.Usuario;
 import br.com.arquiteturahexagonal.application.port.in.UsuarioServicePort;
 import jakarta.validation.Valid;

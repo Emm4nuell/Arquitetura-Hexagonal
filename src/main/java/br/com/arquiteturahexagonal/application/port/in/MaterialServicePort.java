@@ -10,7 +10,6 @@ public interface MaterialServicePort {
     Material updateService(Material material, Long id);
     List<Material> findAllService();
     Material findByIdService(Long id);
-
     void deleteService(Long id);
 
 }

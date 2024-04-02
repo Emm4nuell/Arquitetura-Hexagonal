@@ -1,4 +1,4 @@
-package br.com.arquiteturahexagonal.adapters.mapper.usuario;
+package br.com.arquiteturahexagonal.adapters.mapper.dto;
 
 import br.com.arquiteturahexagonal.adapters.inbound.entity.UsuarioEntity;
 import lombok.AllArgsConstructor;

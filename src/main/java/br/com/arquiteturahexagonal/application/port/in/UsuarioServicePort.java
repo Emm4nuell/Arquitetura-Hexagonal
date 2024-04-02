@@ -10,7 +10,6 @@ public interface UsuarioServicePort {
     Usuario updateService(Usuario usuario, Long id);
     List<Usuario> findAllService();
     Usuario findByIdService(Long id);
-
     void deleteService(Long id);
 
 }
