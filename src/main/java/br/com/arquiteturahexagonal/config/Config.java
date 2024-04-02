@@ -1,7 +1,11 @@
 package br.com.arquiteturahexagonal.config;
 
+import br.com.arquiteturahexagonal.application.core.service.CotacaoService;
+import br.com.arquiteturahexagonal.application.core.service.EmpresaService;
 import br.com.arquiteturahexagonal.application.core.service.MaterialService;
 import br.com.arquiteturahexagonal.application.core.service.UsuarioService;
+import br.com.arquiteturahexagonal.application.port.out.CotacaoRepositoryPort;
+import br.com.arquiteturahexagonal.application.port.out.EmpresaRepositoryPort;
 import br.com.arquiteturahexagonal.application.port.out.MaterialRepositoryPort;
 import br.com.arquiteturahexagonal.application.port.out.UsuarioRepositoryPort;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,6 +25,16 @@ public class Config {
     @Bean
     public MaterialService materialService(MaterialRepositoryPort materialRepositoryPort){
         return new MaterialService(materialRepositoryPort);
+    }
+
+    @Bean
+    public CotacaoService cotacaoService(CotacaoRepositoryPort cotacaoRepositoryPort){
+        return  new CotacaoService(cotacaoRepositoryPort);
+    }
+
+    @Bean
+    public EmpresaService empresaService(EmpresaRepositoryPort empresaRepositoryPort){
+        return new EmpresaService(empresaRepositoryPort);
     }
 
     @Bean
