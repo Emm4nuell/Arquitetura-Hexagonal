@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class CotaçãoRepositoryAdapter implements CotacaoRepositoryPort {
+public class CotacaoRepositoryAdapter implements CotacaoRepositoryPort {
 
     @Autowired
     private CotacaoRepository cotacaoRepository;
