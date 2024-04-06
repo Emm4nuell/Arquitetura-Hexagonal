@@ -43,7 +43,7 @@ public class UsuarioEntity {
     @Enumerated(EnumType.ORDINAL)
     private Set<PerfilEnums> perfilEnums = new HashSet<>();
 
-    @JsonIgnore
+//    @JsonIgnore
     @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY)
     private List<MaterialEntity> materiais;
 

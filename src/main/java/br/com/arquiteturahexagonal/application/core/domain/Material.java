@@ -2,6 +2,7 @@ package br.com.arquiteturahexagonal.application.core.domain;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 public class Material {
 
@@ -19,11 +20,12 @@ public class Material {
     private String observacao;
     private String arquivo;
     private Usuario usuario;
+    private List<Cotacao> cotacoes;
 
     public Material() {
     }
 
-    public Material(Long id, LocalDateTime datacriacao, Date dataconclusao, String prioridade, String descricao, Long quantidade, boolean status, String andamento, double mediavalor, double minvalor, double maxvalor, String observacao, String arquivo, Usuario usuario) {
+    public Material(Long id, LocalDateTime datacriacao, Date dataconclusao, String prioridade, String descricao, Long quantidade, boolean status, String andamento, double mediavalor, double minvalor, double maxvalor, String observacao, String arquivo, Usuario usuario, List<Cotacao> cotacoes) {
         this.id = id;
         this.datacriacao = datacriacao;
         this.dataconclusao = dataconclusao;
@@ -38,6 +40,7 @@ public class Material {
         this.observacao = observacao;
         this.arquivo = arquivo;
         this.usuario = usuario;
+        this.cotacoes = cotacoes;
     }
 
     public Long getId() {
@@ -150,5 +153,13 @@ public class Material {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<Cotacao> getCotacoes() {
+        return cotacoes;
+    }
+
+    public void setCotacoes(List<Cotacao> cotacoes) {
+        this.cotacoes = cotacoes;
     }
 }

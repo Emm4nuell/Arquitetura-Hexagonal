@@ -1,5 +1,6 @@
 package br.com.arquiteturahexagonal.adapters.inbound.entity;
 
+import br.com.arquiteturahexagonal.adapters.mapper.dto.CotacaoDto;
 import br.com.arquiteturahexagonal.application.core.domain.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -35,7 +36,7 @@ public class MaterialEntity {
     private String observacao;
     private String arquivo;
 
-    @JsonIgnore
+//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private UsuarioEntity usuario;

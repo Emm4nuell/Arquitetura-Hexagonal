@@ -1,6 +1,7 @@
 package br.com.arquiteturahexagonal.adapters.inbound.controller;
 
 import br.com.arquiteturahexagonal.adapters.mapper.dto.MaterialDto;
+import br.com.arquiteturahexagonal.adapters.mapper.dto.UsuarioDto;
 import br.com.arquiteturahexagonal.application.core.domain.Material;
 import br.com.arquiteturahexagonal.application.port.in.MaterialServicePort;
 import org.modelmapper.ModelMapper;
@@ -33,5 +34,13 @@ public class MaterialController {
         List<MaterialDto> dtos = materialServicePort.findAllService().stream()
                 .map(x -> mapper.map(x, MaterialDto.class)).collect(Collectors.toList());
         return ResponseEntity.status(HttpStatus.OK).body(dtos);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<MaterialDto> findById(@PathVariable Long id){
+        Material material = materialServicePort.findByIdService(id);
+        MaterialDto dto = mapper.map(material, MaterialDto.class);
+//        dto.setUsuarioDto(mapper.map(material.getUsuario(), UsuarioDto.class));
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 }

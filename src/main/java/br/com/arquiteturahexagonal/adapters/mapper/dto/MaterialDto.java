@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 
 @Data
@@ -27,6 +28,6 @@ public class MaterialDto {
     private double maxvalor;
     private String observacao;
     private String arquivo;
-    private UsuarioEntity usuario;
-
+//    private UsuarioDto usuarioDto;
+    private List<CotacaoDto> cotacaoDtos;
 }

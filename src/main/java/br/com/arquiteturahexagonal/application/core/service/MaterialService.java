@@ -35,7 +35,8 @@ public class MaterialService implements MaterialServicePort {
 
     @Override
     public Material findByIdService(Long id) {
-        return materialRepositoryPort.findByIdRepository(id);
+        Material material = materialRepositoryPort.findByIdRepository(id);
+        return material;
     }
 
     @Override
