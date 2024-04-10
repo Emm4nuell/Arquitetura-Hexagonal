@@ -11,5 +11,8 @@ public interface UsuarioServicePort {
     List<Usuario> findAllService();
     Usuario findByIdService(Long id);
     void deleteService(Long id);
+    void authUser(Usuario usuario);
+
+    Usuario findByCpfService(String cpf);
 
 }

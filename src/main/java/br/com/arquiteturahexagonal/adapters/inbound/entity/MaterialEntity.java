@@ -36,11 +36,11 @@ public class MaterialEntity {
     private String observacao;
     private String arquivo;
 
-//    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private UsuarioEntity usuario;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "material", fetch = FetchType.LAZY)
     private List<CotacaoEntity> cotacoes;
 

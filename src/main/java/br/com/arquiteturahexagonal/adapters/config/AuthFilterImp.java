@@ -1,4 +1,4 @@
-package br.com.arquiteturahexagonal.config.auth;
+package br.com.arquiteturahexagonal.adapters.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -30,8 +30,6 @@ public class AuthFilterImp extends OncePerRequestFilter {
                 context.setAuthentication(user);
             }
         }
-
         filterChain.doFilter(request, response);
-
     }
 }

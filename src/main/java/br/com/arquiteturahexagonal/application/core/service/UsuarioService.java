@@ -48,4 +48,14 @@ public class UsuarioService implements UsuarioServicePort {
     public void deleteService(Long id) {
         usuarioRepositoryPort.deleteRepository(id);
     }
+
+    @Override
+    public void authUser(Usuario usuario) {
+        usuarioRepositoryPort.authRepository(usuario);
+    }
+
+    @Override
+    public Usuario findByCpfService(String cpf) {
+        return usuarioRepositoryPort.findByCpfRepository(cpf);
+    }
 }

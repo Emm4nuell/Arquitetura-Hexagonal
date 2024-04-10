@@ -1,5 +1,6 @@
 package br.com.arquiteturahexagonal.adapters.inbound.controller;
 
+import br.com.arquiteturahexagonal.adapters.mapper.dto.UsuarioAuthDto;
 import br.com.arquiteturahexagonal.adapters.mapper.dto.UsuarioDto;
 import br.com.arquiteturahexagonal.application.core.domain.Usuario;
 import br.com.arquiteturahexagonal.application.port.in.UsuarioServicePort;
@@ -51,6 +52,12 @@ public class UsuarioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         usuarioServicePort.deleteService(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/auth")
+    public ResponseEntity<UsuarioAuthDto> auth(@RequestBody UsuarioAuthDto dto){
+        usuarioServicePort.authUser(mapper.map(dto, Usuario.class));
         return ResponseEntity.ok().build();
     }
 

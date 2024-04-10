@@ -156,5 +156,6 @@ public class Usuario {
     public void setMateriais(List<Material> materiais) {
         this.materiais = materiais;
     }
+
 }
 
