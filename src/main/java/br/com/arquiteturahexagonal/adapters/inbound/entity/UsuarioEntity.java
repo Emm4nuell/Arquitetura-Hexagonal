@@ -3,9 +3,7 @@ package br.com.arquiteturahexagonal.adapters.inbound.entity;
 import br.com.arquiteturahexagonal.application.core.enums.PerfilEnums;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -15,7 +13,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioEntity {

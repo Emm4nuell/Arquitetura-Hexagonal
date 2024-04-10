@@ -4,9 +4,7 @@ import br.com.arquiteturahexagonal.adapters.mapper.dto.CotacaoDto;
 import br.com.arquiteturahexagonal.application.core.domain.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -15,7 +13,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "material")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class MaterialEntity {
