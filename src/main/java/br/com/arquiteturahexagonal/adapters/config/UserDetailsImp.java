@@ -43,7 +43,9 @@ public class UserDetailsImp implements UserDetailsService {
 
         UsuarioEntity usuario = usuarioRepository.findByCpf(cpf).orElseThrow(() -> new NullPointerException("Usuario ou senha não localizado na base de dados"));
 
-        List<String> roles = usuario.getPerfilEnums().stream().map(e -> e.toString()).collect(Collectors.toList());
+        List<String> roles = usuario.getPerfilEnums().stream().map(e -> "ROLE_"+e.toString()).collect(Collectors.toList());
+
+        System.err.println("Roles: " + roles);
 
         return User.builder()
                 .username(usuario.getCpf())
